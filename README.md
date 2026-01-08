@@ -53,14 +53,14 @@ public class GameManager : MonoBehaviour
 ```csharp
 public partial class PlayerController : MonoBehaviour
 {
-    [Inject] private PlayerState _playerState;
-    [Inject("debug")] private ILogger _logger;
+    [Inject] private PlayerState _dPlayerState;
+    [Inject("debug")] private ILogger _dLogger;
 
     void Start()
     {
-        // Use generated properties
-        dPlayerState.Initialize();
-        dLogger.Log("Player initialized");
+        // Use generated properties (PascalCase of field name)
+        DPlayerState.Initialize();
+        DLogger.Log("Player initialized");
     }
 }
 ```
@@ -71,28 +71,28 @@ public partial class PlayerController : MonoBehaviour
 - Access dependencies via generated **Properties**, not fields
 - Field accessibility is preserved (private field → private property)
 - Returns `null` if dependency is not registered (no exception thrown)
-- **Recommended**: Use `d` prefix in property names (e.g., `dPlayerState`) to avoid confusion with type names
+- **Recommended**: Use `d` prefix in field names (e.g., `_dPlayerState`) to generate `DPlayerState` property and avoid confusion with type names
 
 ## Generated Code Example
 
 For this field:
 
 ```csharp
-[Inject] private PlayerState _playerState;
+[Inject] private PlayerState _dPlayerState;
 ```
 
 The Source Generator creates:
 
 ```csharp
-private PlayerState dPlayerState
+private PlayerState DPlayerState
 {
     get
     {
-        if (_playerState == null)
+        if (_dPlayerState == null)
         {
-            _playerState = DIContainer.GetValue(typeof(PlayerState), "") as PlayerState;
+            _dPlayerState = DIContainer.GetValue(typeof(PlayerState), "") as PlayerState;
         }
-        return _playerState;
+        return _dPlayerState;
     }
 }
 ```

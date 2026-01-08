@@ -301,8 +301,8 @@ namespace InjectCodeGen
 
         /// <summary>
         /// Generate property name from field name.
-        /// _fieldName -> dFieldName
-        /// fieldName -> dFieldName
+        /// _fieldName -> FieldName
+        /// fieldName -> FieldName
         /// </summary>
         internal static string GetPropertyName(string fieldName)
         {
@@ -312,16 +312,8 @@ namespace InjectCodeGen
             if (string.IsNullOrEmpty(trimmed))
                 return fieldName;
 
-            // Add 'd' prefix and capitalize first letter
-            return "d" + char.ToUpper(trimmed[0]) + trimmed.Substring(1);
-        }
-
-        /// <summary>
-        /// Check if property name has the recommended 'd' prefix.
-        /// </summary>
-        internal static bool HasRecommendedPrefix(string propertyName)
-        {
-            return propertyName.StartsWith("d") && propertyName.Length > 1 && char.IsUpper(propertyName[1]);
+            // Capitalize first letter (PascalCase)
+            return char.ToUpper(trimmed[0]) + trimmed.Substring(1);
         }
 
         private class InjectFieldInfo
@@ -347,8 +339,8 @@ namespace InjectCodeGen
         private static readonly LocalizableString DirectAccessDescription = "Fields with [Inject] attribute must be accessed through auto-generated properties only.";
 
         private static readonly LocalizableString TypeNameCollisionTitle = "Generated property name matches type name";
-        private static readonly LocalizableString TypeNameCollisionMessageFormat = "Generated property '{0}' has the same name as its type '{1}'. Consider using a prefix like 'd' (e.g., 'd{0}') to avoid confusion.";
-        private static readonly LocalizableString TypeNameCollisionDescription = "When the generated property name matches the type name, it can cause confusion. Using a prefix like 'd' is recommended.";
+        private static readonly LocalizableString TypeNameCollisionMessageFormat = "Generated property '{0}' has the same name as its type '{1}'. Consider prefixing the field name with 'd' (e.g., '_d{0}') to generate 'D{0}' instead.";
+        private static readonly LocalizableString TypeNameCollisionDescription = "When the generated property name matches the type name, it can cause confusion. Prefixing the field with 'd' is recommended.";
 
         private const string Category = "Usage";
 

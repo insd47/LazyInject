@@ -1,8 +1,0 @@
-# Exclude build-related files from Unity package
-SourceGenerator/
-build.sh
-.git/
-.gitignore
-.DS_Store
-*.md
-!README.md
