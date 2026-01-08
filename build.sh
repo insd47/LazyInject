@@ -6,7 +6,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOURCE_GEN_DIR="$SCRIPT_DIR/SourceGenerator"
+SOURCE_GEN_DIR="$SCRIPT_DIR/.SourceGenerator"
 PLUGINS_DIR="$SCRIPT_DIR/Plugins"
 DLL_NAME="Inject.CodeGen.dll"
 

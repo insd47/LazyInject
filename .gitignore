@@ -1,6 +1,6 @@
 # Build outputs
-SourceGenerator/bin/
-SourceGenerator/obj/
+.SourceGenerator/bin/
+.SourceGenerator/obj/
 
 # IDE
 .idea/
