@@ -11,3 +11,6 @@ SourceGenerator/obj/
 # OS
 .DS_Store
 Thumbs.db
+
+# Unity package manager ignores
+.npmignore
