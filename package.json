@@ -1,0 +1,23 @@
+{
+  "name": "dev.insd.lazyinject",
+  "version": "1.0.0",
+  "displayName": "LazyInject",
+  "description": "A lightweight dependency injection framework for Unity using Source Generators. Provides lazy getter properties for [Inject] attributed fields.",
+  "unity": "6000.0",
+  "keywords": [
+    "dependency-injection",
+    "di",
+    "ioc",
+    "source-generator",
+    "lazy-loading"
+  ],
+  "author": {
+    "name": "insd47",
+    "url": "https://github.com/insd47"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/insd47/LazyInject.git"
+  },
+  "license": "MIT"
+}

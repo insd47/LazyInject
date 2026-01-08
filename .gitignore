@@ -1,0 +1,13 @@
+# Build outputs
+SourceGenerator/bin/
+SourceGenerator/obj/
+
+# IDE
+.idea/
+*.user
+*.suo
+.vs/
+
+# OS
+.DS_Store
+Thumbs.db
