@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 /// <summary>
 /// Dependency injection container for managing object instances.
