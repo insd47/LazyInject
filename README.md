@@ -106,7 +106,7 @@ private PlayerState DPlayerState
 
 ## Building from Source
 
-The Source Generator project is in the `.SourceGenerator/` folder (hidden from Unity).
+The Source Generator project is in the `SourceGenerator~` folder (hidden from Unity).
 
 ### Using the build script
 
@@ -119,7 +119,7 @@ This will build the DLL and copy it to the `Plugins/` folder.
 ### Manual build
 
 ```bash
-cd .SourceGenerator
+cd SourceGenerator~
 dotnet build -c Release
 cp bin/Release/netstandard2.0/Inject.CodeGen.dll ../Plugins/
 ```
