@@ -1,6 +1,6 @@
 # Build outputs
-.SourceGenerator/bin/
-.SourceGenerator/obj/
+SourceGenerator~/bin/
+SourceGenerator~/obj/
 
 # IDE
 .idea/
@@ -11,6 +11,3 @@
 # OS
 .DS_Store
 Thumbs.db
-
-# Unity package manager ignores
-.npmignore
